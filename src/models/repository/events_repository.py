@@ -6,5 +6,9 @@ class EventsRepository:
     def insert_event(self, eventsInfo: Dict) -> Dict:
         with db_connection_handler as database:
             event = Events(
-                id=eventsInfo["uuid"]
+                id=eventsInfo.get("uuid"),
+                title=eventsInfo.get("title"),
+                detail=eventsInfo.get("detail"),
+                slug=eventsInfo.get("slug"),
+                maximum_attendees=eventsInfo.get("maximum_attendees"),
             )
