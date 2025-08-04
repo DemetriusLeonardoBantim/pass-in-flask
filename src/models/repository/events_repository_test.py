@@ -1,3 +1,4 @@
+import pytest
 from src.models.settings.connection import db_connection_handler
 from .events_repository import EventsRepository
 
@@ -13,3 +14,9 @@ def test_insert_event():
 
     events_repository = EventsRepository()
     response = events_repository.insert_event(event)
+
+def test_get_event_by_id():
+    event_id = "meu-uuid-e-nois2"
+    events_repository = EventsRepository()
+    response = events_repository.get_event_by_id(event_id)
+    print(response)
