@@ -12,3 +12,7 @@ class EventsRepository:
                 slug=eventsInfo.get("slug"),
                 maximum_attendees=eventsInfo.get("maximum_attendees"),
             )
+            database.session.add(event)
+            database.session.commit()
+
+            return eventsInfo
