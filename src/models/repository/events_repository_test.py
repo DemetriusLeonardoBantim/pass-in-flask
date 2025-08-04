@@ -13,4 +13,3 @@ def test_insert_event():
 
     events_repository = EventsRepository()
     response = events_repository.insert_event(event)
-    print(response)
